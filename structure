@@ -1,0 +1,10 @@
+ANALYSIS PROJECT/
+├── .env
+├── main.py
+├── weather_api.py
+├── traffic_api.py
+├── accident_api.py
+├── storage.py
+├── sample_weather.json    # optional: used when API keys missing or for testing
+├── sample_traffic.json    # optional: used when API keys missing or for testing
+└── requirements.txt
