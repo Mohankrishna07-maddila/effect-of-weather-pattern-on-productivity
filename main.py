@@ -12,6 +12,8 @@ from storage import append_row, delete_csv, CSV_FILE
 DEFAULT_LAT = 17.3850
 DEFAULT_LON = 78.4867
 
+from indian_states import get_random_state
+
 def collect_and_save(lat, lon):
     # fetch sources
     weather = get_weather(lat=lat, lon=lon)
@@ -60,9 +62,16 @@ def main():
         collect_and_save(args.lat, args.lon)
     else:
         print(f"Starting continuous collection every {args.interval} seconds. Press Ctrl+C to stop.")
+        entry_count = 0
+        cur_state = {"state": "Telangana", "city": "Hyderabad", "lat": args.lat, "lon": args.lon}
         try:
             while True:
-                collect_and_save(args.lat, args.lon)
+                # Change state every 10 entries
+                if entry_count % 10 == 0:
+                    cur_state = get_random_state()
+                    print(f"\nCollecting data for {cur_state['city']}, {cur_state['state']} (lat={cur_state['lat']}, lon={cur_state['lon']})")
+                collect_and_save(cur_state['lat'], cur_state['lon'])
+                entry_count += 1
                 time.sleep(args.interval)
         except KeyboardInterrupt:
             print("Stopped by user.")
