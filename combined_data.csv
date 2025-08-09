@@ -1,2 +1,4 @@
 timestamp,lat,lon,temp_c,humidity_pct,wind_spd_mps,weather_desc,current_speed_kmh,free_flow_speed_kmh,current_travel_time_s,free_flow_travel_time_s,traffic_confidence,accident_count,accident_low,accident_medium,accident_high
 2025-08-09 17:33:46,19.076,72.8777,30,74,5.7,Haze,9,19,293,139,0.93,377,377,0,0
+2025-08-09 17:38:49,19.076,72.8777,30,74,5.7,Haze,12,19,220,139,0.92,382,382,0,0
+2025-08-09 17:43:51,19.076,72.8777,29.8,74,1,Haze,10,19,264,139,0.93,370,370,0,0
